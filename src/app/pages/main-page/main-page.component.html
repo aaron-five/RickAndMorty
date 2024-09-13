@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h1>Rick y Morty Wiki</h1>
+  <br />
+
+  <input
+    *ngIf="characters.length > 0"
+    type="text"
+    class="form-control"
+    placeholder="Rick Sanchez..."
+    (input)="filter($event)"
+  />
+
+  <ng-container
+    *ngIf="characters.length === 0; then NoItems; else WithItems"
+  ></ng-container>
+</div>
+
+<!--Templates-->
+<ng-template #NoItems>
+  <h1 class="mt-2 d-flex justify-content-center">
+    No contiene elementos
+  </h1></ng-template
+>
+<ng-template #WithItems>
+  <div class="row g-2 mt-2">
+    <div
+      *ngFor="let item of characters; trackBy: trackByFn"
+      class="col-3 d-flex justify-content-center"
+    >
+      <app-card [showButton]="true" [character]="item"></app-card>
+    </div>
+  </div>
+</ng-template>

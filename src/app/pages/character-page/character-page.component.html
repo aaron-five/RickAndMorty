@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  @if (character) {
+  <div class="d-flex justify-content-center">
+    <app-card [character]="character"></app-card>
+  </div>
+  } @else {
+  <p>No hay nada</p>
+  }
+</div>

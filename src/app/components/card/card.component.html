@@ -1,0 +1,14 @@
+<div class="card" [ngStyle]="{ width: showButton ? '250px' : '500px' }">
+  <img src="{{ character.image }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ character.name }}</h5>
+    <p class="card-text">{{ character.status }}</p>
+
+    <a
+      *ngIf="showButton"
+      href="/character/{{ character.id }}"
+      class="btn btn-primary"
+      >ver personaje</a
+    >
+  </div>
+</div>
